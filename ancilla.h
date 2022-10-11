@@ -271,3 +271,8 @@ int DashTremor_TwiddleOffset(int k);
 void Ancilla_TerminateIfOffscreen(int j);
 bool Bomb_CheckUndersideSpriteStatus(int k, Point16U *out_pt, uint8 *out_r10);
 void Sprite_CreateDeflectedArrow(int k);
+
+#ifdef L_TARGETING
+void AncillaAdd_Reticle(uint8 a, uint8 y);
+void Ancilla14_Reticl(int k);
+#endif

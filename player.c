@@ -318,6 +318,9 @@ endif_3:
   Link_HandleVelocity();
   Link_HandleCardinalCollision();
   Link_HandleMovingAnimation_FullLongEntry();
+#ifdef L_TARGETING
+  Link_HandleLTargeting();
+#endif
   if (link_unk_master_sword)
     link_y_vel = link_x_vel = 0;
 
@@ -325,6 +328,36 @@ getout_dostuff:
   fallhole_var1 = 0;
   HandleIndoorCameraAndDoors();
 }
+
+#ifdef L_TARGETING
+// TODO: For "nearest enemy", do "nearest to x units in front of link"?
+
+void Link_HandleLTargeting(){
+
+  // If L button is not pressed or released,
+    // Dec L button cooldown
+      // Mark all sprites as not targeted?
+
+  // If L button pressed
+    // If L button timer is not 0, 
+      //(double tap) set target to next nearest enemy not marked as targeted
+      // If none found, clear all targeted sprites
+    // If no target
+      // Set target to nearest enemy
+    // If target
+      // Create ancilla for target reticle
+    // If no target available?
+
+  // If L button released, clear nearest enemy idx
+    // Destroy ancilla for target reticle
+    // Set L button timer to cooldown value
+
+  // If L button held, and nearest enemy idx is valid, 
+    // set link to face that enemy
+    // Note: When getting offsets, use Link's right side as the origin
+    //     this way, the sword swing would hit the enemy
+}
+#endif
 
 bool Link_HandleBunnyTransformation() {  // 8782da
   if (!link_timer_tempbunny)

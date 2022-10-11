@@ -269,7 +269,11 @@ static HandlerFuncK *const kAncilla_Funcs[67] = {
   &Ancilla11_IceRodWallHit,
   &Ancilla33_BlastWallExplosion,
   &Ancilla13_IceRodSparkle,
+#ifdef L_TARGETING
+  &Ancilla14_Reticle,
+#else
   &Ancilla_Unused_14,
+#endif
   &Ancilla15_JumpSplash,
   &Ancilla16_HitStars,
   &Ancilla17_ShovelDirt,
@@ -375,6 +379,12 @@ static void Ancilla_SetOam_Safe(OamEnt *oam, uint16 x, uint16 y, uint8 charnum, 
 
 void Ancilla_Empty(int k) {
 }
+
+#ifdef L_TARGETING
+void Ancilla14_Reticle(int k) {
+
+}
+#endif
 
 void Ancilla_Unused_14(int k) {
   assert(0);

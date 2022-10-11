@@ -593,6 +593,13 @@
 #define vwf_curline (*(uint16*)(g_ram+0x722))
 #define vwf_var1 (*(uint16*)(g_ram+0x724))
 #define vwf_line_ptr (*(uint16*)(g_ram+0x726))
+
+#ifdef L_TARGETING
+#define l_press_cooldown_timer (*(uint8*)(g_ram+0x728))
+#define l_target_sprite_idx (*(uint8*)(g_ram+0x729))
+#define sprite_targeted_by_l (*(uint8*)(g_ram+0x730))
+#endif
+
 #define extended_oam ((uint8*)(g_ram+0xA00))
 #define bytewise_extended_oam ((uint8*)(g_ram+0xA20))
 #define byte_7E0AA0 (*(uint8*)(g_ram+0xAA0))
